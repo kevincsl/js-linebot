@@ -8,9 +8,9 @@ npm install
 ```
 2. 設置環境變數： 確保您已經設置了 LINE_CHANNEL_ACCESS_TOKEN、LINE_CHANNEL_SECRET 和 PORT 環境變數。您可以在命令行中設置這些變數：
 ```
- export LINE_CHANNEL_ACCESS_TOKEN=your_channel_access_token
- export LINE_CHANNEL_SECRET=your_channel_secret
- export PORT=your_port
+export LINE_CHANNEL_ACCESS_TOKEN=your_channel_access_token
+export LINE_CHANNEL_SECRET=your_channel_secret
+export PORT=your_port
 ```
 3. 啟動應用程式： 使用以下命令來啟動應用程式：
 ```
