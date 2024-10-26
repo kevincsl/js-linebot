@@ -29,11 +29,10 @@ const config = {
     channelSecret: 'b44fedbc1b061b2ad22c9a9328adee25'
 };
 
-const client = new line.Client(config);
 
 app.use(bodyParser.json());
 
-app.post('/webhook', line.middleware(config), (req, res) => {
+app.post('/', line.middleware(config), (req, res) => {
     Promise
         .all(req.body.events.map(handleEvent))
         .then((result) => res.json(result))
