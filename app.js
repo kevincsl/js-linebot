@@ -37,9 +37,9 @@ function handleEvent(event) {
     if (event.type !== 'message' || event.message.type !== 'text') {
         return Promise.resolve(null);
     }
-    const line_client_id = event.source.userId;
-    const echo = { type: 'text', text: event.message.text };
-    return client.replyMessage(event.replyToken, echo+line_client_id);
+    // 這裡是回覆使用者傳來的訊息 + 使用者的 userId
+    const echo = { type: 'text', text: event.message.text+' '+event.source.userId }; 
+    return client.replyMessage(event.replyToken, echo);
 }
 
 const port = process.env.PORT || 8000;
