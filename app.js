@@ -1,4 +1,3 @@
-
 // 用 Express 建立一個簡單的伺服器，並且使用 @line/bot-sdk 套件來處理 LINE Bot 的訊息事件。 
 // 這個範例會回覆使用者傳來的訊息。
 // 指令: node app.js
@@ -8,12 +7,11 @@
 // 指令: export LINE_CHANNEL_SECRET
 // 指令: export PORT=8000
 
-
 // 安裝 express and @line/bot-sdk 套件
 // 指令: npm install express @line/bot-sdk
 
-import express from 'express';
-import { middleware, Client } from '@line/bot-sdk';
+const express = require('express');
+const { middleware, Client } = require('@line/bot-sdk');
 
 const config = {
     channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN,
@@ -38,7 +36,7 @@ function handleEvent(event) {
         return Promise.resolve(null);
     }
     // 這裡是回覆使用者傳來的訊息 + 使用者的 userId
-    const echo = { type: 'text', text: event.message.text+' '+event.source.userId }; 
+    const echo = { type: 'text', text: event.message.text + ' ' + event.source.userId };
     return client.replyMessage(event.replyToken, echo);
 }
 

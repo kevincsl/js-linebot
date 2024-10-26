@@ -1,10 +1,13 @@
 {
-  "dependencies": {
-    "@line/bot-sdk": "^9.4.2",
-    "body-parser": "^1.20.3",
-    "express": "^4.21.1"
+  "name": "js-linebot",
+  "version": "1.0.0",
+  "description": "A simple LINE bot using express and @line/bot-sdk",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
   },
-  "type": "commonjs",
-  "name": "app.js",
-  "version": "1.0.0"
+  "dependencies": {
+    "express": "^4.21.1",
+    "@line/bot-sdk": "^9.4.2"
+  }
 }
